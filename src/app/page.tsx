@@ -5,7 +5,7 @@ export default function Page() {
   return (
     /* Name description card */
     <div className="relative flex flex-col items-center min-h-screen bg-black p-6 overflow-hidden">
-      <Card className="relative z-10 w-[600px] h-[700px] flex flex-col bg-white/1 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl text-white
+      <Card className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl flex flex-col bg-white/1 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl text-white
       before:absolute before:inset-0 before:rounded-xl
       before:bg-gradient-to-br before:from-white/10 before:to-transparent before:opacity-70">
         <CardHeader>
@@ -19,7 +19,7 @@ export default function Page() {
             </div>
           </CardDescription>
 
-          <CardDescription className = "mt-35 text-center text-gray-400 text-sm animate-pulse-slow font-serif">
+          <CardDescription className = "mt-30 text-center text-gray-400 text-sm animate-pulse-slow font-serif">
             Hello! My name is Matthew and I am an aspiring software engineer studying computer science at NYIT. I have gained my experience so far building projects using React Native & Expo Go, in addition to working with several backend services such as Spring Boot, Firebase, and MySQL. I have different side projects as well that can be accessible below.
           </CardDescription>
         </CardHeader>
@@ -73,7 +73,7 @@ export default function Page() {
             href = "https://github.com/mcampo0215/AlgoVisualization"
             target = "_blank"
             rel = "noopener noreferrer">
-            <div className = "relative group w-[480px] h-[250px] cursor-pointer">
+            <div className = "relative group w-full sm:w-[360px] md:w-[400px] lg:w-[480px] h-[250px] cursor-pointer">
         <Card className = " animate-pulse-slow flex items-center justify-center text-center w-[480px] h-[250px] bg-white/1 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl text-white before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-br before:from-white/10 before:to-transparent before:opacity-100">
         <CardTitle className = "text-[20px] font-serif">
             AlgoVisualization
@@ -84,7 +84,7 @@ export default function Page() {
         </div>
             </div>
             </a>
-        <div className = "relative group w-[480px] h-[250px] cursor-pointer">
+        <div className = "relative group w-full sm:w-[360px] md:w-[400px] lg:w-[480px] h-[250px] cursor-pointer">
         <Card className = " animate-pulse-slow flex items-center justify-center text-center w-[480px] h-[250px] bg-white/1 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl text-white before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-br before:from-white/10 before:to-transparent before:opacity-100">
         <CardTitle className = "text-[20px] font-serif">
             MarkovStats

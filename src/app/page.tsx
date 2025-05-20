@@ -5,9 +5,9 @@ export default function Page() {
   return (
     /* Name description card */
     <div className="relative flex flex-col items-center min-h-screen bg-black p-6 overflow-hidden">
-      <Card className="w-[600px] h-[700px] flex flex-col bg-white/1 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl text-white
+      <Card className="relative z-10 w-[600px] h-[700px] flex flex-col bg-white/1 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl text-white
       before:absolute before:inset-0 before:rounded-xl
-      before:bg-gradient-to-br before:from-white/10 before:to-transparent before:opacity-100">
+      before:bg-gradient-to-br before:from-white/10 before:to-transparent before:opacity-70">
         <CardHeader>
           <CardTitle className="text-center text-[30px] font-bold font-serif">
             Matthew Campoverde
@@ -25,7 +25,7 @@ export default function Page() {
         </CardHeader>
 
         {/* Code for github link */}
-        <CardFooter className="mt-auto flex justify-end items-center gap-4 px-6 pb-6">
+        <CardFooter className=" z-20 mt-auto flex justify-end items-center gap-4 px-6 pb-6">
           <a
             href="https://github.com/mcampo0215"
             target="_blank"
@@ -73,7 +73,7 @@ export default function Page() {
             href = "https://github.com/mcampo0215/AlgoVisualization"
             target = "_blank"
             rel = "noopener noreferrer">
-            <div className = "relative group w[480px] h-[250px] cursor-pointer">
+            <div className = "relative group w-[480px] h-[250px] cursor-pointer">
         <Card className = " animate-pulse-slow flex items-center justify-center text-center w-[480px] h-[250px] bg-white/1 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl text-white before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-br before:from-white/10 before:to-transparent before:opacity-100">
         <CardTitle className = "text-[20px] font-serif">
             AlgoVisualization

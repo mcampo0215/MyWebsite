@@ -93,7 +93,7 @@ export default function Page() {
           </a>
 
           <a
-            href="https://github.com/mcampo0215/MarkovStats"
+            href="https://github.com/mcampo0215/MarkovChains"
             target="_blank"
             rel="noopener noreferrer"
             className="relative group w-full sm:w-[300px] md:w-[360px] lg:w-[420px] xl:w-[460px] h-[250px] cursor-pointer"

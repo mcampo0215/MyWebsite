@@ -15,8 +15,10 @@ export default function RootLayout({
             <body className = "min-h-screen">
                 {/* Layout UI */}
                 {/* Place children where you want to render a page or nested layout*/}
+               
                 <main className = "min-h-screen">{children}</main>
             </body>
+
         </html>
     )
 }

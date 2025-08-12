@@ -1,7 +1,6 @@
 import * as React from "react";
 import {Card,CardDescription,CardFooter,CardHeader,CardTitle} from "@/components/ui/card";
 import { Github, Linkedin } from "lucide-react";
-import { ShineBorder } from "@/components/magicui/shine-border";
 
 export default function Page() {
   return (

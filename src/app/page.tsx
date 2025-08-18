@@ -1,12 +1,12 @@
 import * as React from "react";
 import {Card,CardDescription,CardFooter,CardHeader,CardTitle} from "@/components/ui/card";
 import { Github, Linkedin } from "lucide-react";
-
+import { TypingAnimation } from "@/components/magicui/typing-animation";
 export default function Page() {
   return (
-    <div className="relative flex flex-col items-center min-h-screen bg-black p-6 overflow-hidden">
+    <div className="relative flex flex-col items-center min-h-screen bg-gradient-to-br from-gray-900/95 to-black/95 p-6 overflow-hidden">
       <div className="relative z-10 w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
-        <Card className="flex flex-col bg-white/5 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl text-white ">
+        <Card className="flex flex-col bg-gradient-to-r from-white via-violet-200 via-cyan-200 to-emerald-200 bg-clip-text text-transparent animate-text-shimmer bg-[length:300%_300%] ">
           <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/10 to-transparent opacity-70 pointer-events-none" />
 
           <CardHeader>
@@ -19,12 +19,14 @@ export default function Page() {
               </div>
             </CardDescription>
             <CardDescription className="mt-6 text-center text-gray-400 text-sm animate-pulse-slow font-serif">
-              Hello! My name is Matthew and I am an aspiring software engineer
+              <TypingAnimation className="font-mono text-sm #0d0d0d, #595959, #c0c0c0, #f5f5f5"
+              duration={65}>Hello! My name is Matthew and I am an aspiring software engineer
               studying computer science at NYIT. I have gained my experience so
               far building projects using React Native & Expo Go, in addition to
               working with several backend services such as Spring Boot,
               Firebase, and MySQL. I have different side projects as well that
-              can be accessible below.
+              can be accessible below.</TypingAnimation>
+            
             </CardDescription>
           </CardHeader>
 

@@ -1,13 +1,13 @@
 "use client"
 import * as React from "react";
 import {Card,CardDescription,CardFooter,CardHeader,CardTitle} from "@/components/ui/card";
-import { Github, Linkedin, ExternalLink, Code, Database, Smartphone, BarChart3 } from "lucide-react";
+import { Github, Linkedin, ExternalLink, Code, Database, Smartphone, BarChart3, BarChart2Icon } from "lucide-react";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 
 export default function Page() {
   const projects = [
     {
-      title: "AlgoVisualization",
+      title: "Algorithm Visualization",
       description:"An algorithm visualization tool used to visualize a brute force soution and optimized solution. Can help students to better visualize and understand the importance of time complexity.",
       tech: ["Java", "p5.js"],
       url: "https://github.com/mcampo0215/AlgoVisualization",
@@ -15,17 +15,17 @@ export default function Page() {
       gradient: "from-blue-500/20 to-purple-500/20"
     },
     {
-      title: "MarkovStats",
+      title: "Page Rank & Markov",
       description:"Simple simulation of PageRank using markov chains. Contains a simple but effective UI with statistics and a graph to better understand how markov chains work.",
       tech: ["React Native", "Javascript", "Spring Boot", "Java"],
       url: "https://github.com/mcampo0215/MarkovChains",
-      icon: <BarChart3 className="w-6 h-6" />,
+      icon: <BarChart2Icon className="w-6 h-6" />,
       gradient: "from-blue-500/20 to-purple-500/20"
     },
     {
       title: "User Authentication",
       description:"User authenitcation system containing registration and login features, along with JWT and email verification.",
-      tech: ["Next.js", "Java", "Spring Boot", "Typescript", "Postgresql", "Postman"],
+      tech: ["Next.js", "Java", "Spring Boot", "Typescript", "PostgreSQL", "Postman"],
       url: "https://github.com/mcampo0215/UserAuthentication",
       icon: <Database className="w-6 h-6" />,
       gradient: "from-blue-500/20 to-purple-500/20"
@@ -33,7 +33,7 @@ export default function Page() {
     {
       title: "Penalty Kick Analyzer",
       description:"UI that allows users to input a video file of them taking a penalty kick, along with an AI generated tip on how to improve shot accuracy. Additionally includes user authentication features for security.",
-      tech: ["Next.js", "Typescript", "Java", "Spring Boot", "Python", "Postgresql", "Postman"],
+      tech: ["Next.js", "Typescript", "Java", "Spring Boot", "Python", "PostgreSQL", "Postman"],
       url: "https://github.com/mcampo0215/Penalty-Kick-Analyzer",
       icon: <Smartphone className="w-6 h-6" />,
       gradient: "from-blue-500/20 to-purple-500/20"
@@ -47,7 +47,7 @@ export default function Page() {
           <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/10 to-transparent opacity-70 pointer-events-none" />
 
           <CardHeader>
-            <CardTitle className="text-center text-[30px] font-bold font-serif">
+            <CardTitle className="text-center text-4xl font-bold mb-4 font-serif bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
               Matthew Campoverde
             </CardTitle>
             <CardDescription className="flex justify-center mt-2">
@@ -99,8 +99,7 @@ export default function Page() {
             Featured Projects
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            A collection of projects showcasing my skills in full-stack development, 
-            algorithms, and data analysis.
+            A collection of projects showcasing my skills as an aspiring software engineer
           </p>
         </div>
 
@@ -158,7 +157,7 @@ export default function Page() {
         </div>
         <div className="mt-16 text-center">
           <p className="text-gray-400 mb-6">
-            Want to see more of my work?
+            Explore more of my work here!
           </p>
           <a
             href="https://github.com/mcampo0215"

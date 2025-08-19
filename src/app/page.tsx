@@ -1,7 +1,7 @@
 "use client"
 import * as React from "react";
 import {Card,CardDescription,CardFooter,CardHeader,CardTitle} from "@/components/ui/card";
-import { Github, Linkedin, ExternalLink, Code, Database, Smartphone, BarChart3, BarChart2Icon } from "lucide-react";
+import { Github, Linkedin, ExternalLink, Code, Database, Smartphone, BarChart2Icon } from "lucide-react";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 
 export default function Page() {

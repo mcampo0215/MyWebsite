@@ -11,12 +11,9 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang = "en">
-            <body className = "min-h-screen">
-                {/* Layout UI */}
-                {/* Place children where you want to render a page or nested layout*/}
-               
-                <main className = "min-h-screen">{children}</main>
+        <html lang = "en" className="bg-black [color-scheme:dark]">
+            <body className = "bg-gradient-to-br from-gray-900 to-black text-white overscroll-none overflow-x-hidden">
+                {children}
             </body>
 
         </html>

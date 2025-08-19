@@ -1,8 +1,45 @@
+"use client"
 import * as React from "react";
 import {Card,CardDescription,CardFooter,CardHeader,CardTitle} from "@/components/ui/card";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, ExternalLink, Code, Database, Smartphone, BarChart3 } from "lucide-react";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
+
 export default function Page() {
+  const projects = [
+    {
+      title: "AlgoVisualization",
+      description:"An algorithm visualization tool used to visualize a brute force soution and optimized solution. Can help students to better visualize and understand the importance of time complexity.",
+      tech: ["Java", "p5.js"],
+      url: "https://github.com/mcampo0215/AlgoVisualization",
+      icon: <Code className="w-6 h-6" />,
+      gradient: "from-blue-500/20 to-purple-500/20"
+    },
+    {
+      title: "MarkovStats",
+      description:"Simple simulation of PageRank using markov chains. Contains a simple but effective UI with statistics and a graph to better understand how markov chains work.",
+      tech: ["React Native", "Javascript", "Spring Boot", "Java"],
+      url: "https://github.com/mcampo0215/MarkovChains",
+      icon: <BarChart3 className="w-6 h-6" />,
+      gradient: "from-blue-500/20 to-purple-500/20"
+    },
+    {
+      title: "User Authentication",
+      description:"User authenitcation system containing registration and login features, along with JWT and email verification.",
+      tech: ["Next.js", "Java", "Spring Boot", "Typescript", "Postgresql", "Postman"],
+      url: "https://github.com/mcampo0215/UserAuthentication",
+      icon: <Database className="w-6 h-6" />,
+      gradient: "from-blue-500/20 to-purple-500/20"
+    },
+    {
+      title: "Penalty Kick Analyzer",
+      description:"UI that allows users to input a video file of them taking a penalty kick, along with an AI generated tip on how to improve shot accuracy. Additionally includes user authentication features for security.",
+      tech: ["Next.js", "Typescript", "Java", "Spring Boot", "Python", "Postgresql", "Postman"],
+      url: "https://github.com/mcampo0215/Penalty-Kick-Analyzer",
+      icon: <Smartphone className="w-6 h-6" />,
+      gradient: "from-blue-500/20 to-purple-500/20"
+    }
+  ];
+
   return (
     <div className="relative flex flex-col items-center min-h-screen bg-gradient-to-br from-gray-900/95 to-black/95 p-6 overflow-hidden">
       <div className="relative z-10 w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
@@ -18,7 +55,7 @@ export default function Page() {
                 CS Student @ NYIT
               </div>
             </CardDescription>
-            <CardDescription className="mt-6 text-center text-gray-400 text-sm animate-pulse-slow font-serif">
+            <div className="mt-6 text-center text-gray-400 text-sm animate-pulse-slow font-serif">
               <TypingAnimation className="font-mono text-sm #0d0d0d, #595959, #c0c0c0, #f5f5f5"
               duration={65}>Hello! My name is Matthew and I am an aspiring software engineer
               studying computer science at NYIT. I have gained my experience so
@@ -26,12 +63,10 @@ export default function Page() {
               working with several backend services such as Spring Boot,
               Firebase, and MySQL. I have different side projects as well that
               can be accessible below.</TypingAnimation>
-            
-            </CardDescription>
+            </div>
           </CardHeader>
 
           <CardFooter className="mt-auto flex justify-center items-center gap-6 px-6 pb-6 z-10">
-            {/* GitHub Icon */}
             <a
               href="https://github.com/mcampo0215"
               target="_blank"
@@ -41,8 +76,6 @@ export default function Page() {
             >
               <Github className="w-6 h-6 text-white group-hover/icon:text-blue-300 transition-colors duration-300" />
             </a>
-
-            {/* LinkedIn Icon */}
             <a
               href="https://www.linkedin.com/in/matthew-campoverde-aa4bb4256"
               target="_blank"
@@ -50,81 +83,92 @@ export default function Page() {
               title="LinkedIn"
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
             >
-              <Linkedin className="w-6 h-6 text-white group-hover/icon:text-blue-300 transition-colors duration-300"></Linkedin>
-             
+              <Linkedin className="w-6 h-6 text-white group-hover/icon:text-blue-300 transition-colors duration-300" />
             </a>
           </CardFooter>
         </Card>
       </div>
 
-      <hr className="w-full max-w-5xl my-6 border-t border-white/20" />
-
+      <hr className="w-full max-w-5xl my-8 border-t border-white/20" />
       <section
         id="projects"
-        className="w-full max-w-6xl text-white flex flex-col items-center"
+        className="w-full max-w-7xl text-white flex flex-col items-center"
       >
-        <h2 className="text-2xl font-bold mb-6 font-serif">Projects</h2>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4 font-serif bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
+            Featured Projects
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            A collection of projects showcasing my skills in full-stack development, 
+            algorithms, and data analysis.
+          </p>
+        </div>
 
-        <div className="flex flex-row flex-wrap justify-center gap-10 w-full px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full px-4">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10"
+              style={{
+                animationDelay: `${index * 150}ms`,
+                animation: 'fadeInUp 0.6s ease-out forwards'
+              }}
+            >
+              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              
+              <div className="relative p-8 h-full flex flex-col">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 rounded-xl bg-white/10 group-hover:bg-white/20 transition-colors duration-300">
+                    {project.icon}
+                  </div>
+                  <h3 className="text-xl font-bold font-mono group-hover:text-white/90 transition-colors">
+                    {project.title}
+                  </h3>
+                </div>
+
+                <div className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
+                  <TypingAnimation className="font-mono text-sm #0d0d0d, #595959, #c0c0c0, #f5f5f5"
+              duration={65}>{project.description}</TypingAnimation>
+                </div>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tech.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 text-xs rounded-full bg-white/10 text-gray-300 border border-white/20 group-hover:bg-white/20 group-hover:text-white transition-all duration-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 group/btn"
+                >
+                  <span className="text-sm font-medium">View Project</span>
+                  <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                </a>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            </div>
+          ))}
+        </div>
+        <div className="mt-16 text-center">
+          <p className="text-gray-400 mb-6">
+            Want to see more of my work?
+          </p>
           <a
-            href="https://github.com/mcampo0215/AlgoVisualization"
+            href="https://github.com/mcampo0215"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group w-full sm:w-[300px] md:w-[360px] lg:w-[420px] xl:w-[460px] h-[250px] cursor-pointer"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 hover:from-blue-600/30 hover:to-purple-600/30 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 group"
           >
-            <Card className="flex items-center justify-center text-center w-full h-full bg-white/5 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl text-white group-hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] group-hover:border-white/30">
-              <CardTitle className="text-[20px] font-serif">
-                AlgoVisualization
-              </CardTitle>
-            </Card>
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 rounded-xl z-20">
-              <span className="text-white font-semibold text-lg">View</span>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/mcampo0215/MarkovChains"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative group w-full sm:w-[300px] md:w-[360px] lg:w-[420px] xl:w-[460px] h-[250px] cursor-pointer"
-          >
-            <Card className="flex items-center justify-center text-center w-full h-full bg-white/5 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl text-whit group-hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] group-hover:border-white/30">
-              <CardTitle className="text-[20px] font-mono">
-                MarkovStats
-              </CardTitle>
-            </Card>
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 rounded-xl z-20">
-              <span className="text-white font-semibold text-lg">View</span>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/mcampo0215/UserAuthentication"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative group w-full sm:w-[300px] md:w-[360px] lg:w-[420px] xl:w-[460px] h-[250px] cursor-pointer"
-          >
-
-            <Card className="flex items-center justify-center text-center w-full h-full bg-white/5 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl text-white group-hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] group-hover:border-white/30">
-              <CardTitle className="font-mono text-[20px]">User Authentication</CardTitle>
-            </Card>
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 rounded-xl z-20">
-              <span className="text-white font-semibold text-lg">View</span>
-            </div>
-          </a>
-
-           <a
-            href="https://github.com/mcampo0215/Penalty-Kick-Analyzer"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative group w-full sm:w-[300px] md:w-[360px] lg:w-[420px] xl:w-[460px] h-[250px] cursor-pointer"
-          >
-            <Card className="relative flex items-center justify-center text-center w-full h-full bg-white/5 backdrop-blur-2xl border border-white/10 rounded-xl shadow-2xl text-white group-hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] group-hover:border-white/30">
-              <CardTitle className="font-mono text-[20px]">Penalty Kick Analyzer</CardTitle>
-            </Card>
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 rounded-xl z-20">
-              <span className="text-white font-semibold text-lg">View</span>
-            </div>
+            <Github className="w-5 h-5" />
+            <span className="font-medium">View All Projects on GitHub</span>
+            <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
           </a>
         </div>
       </section>

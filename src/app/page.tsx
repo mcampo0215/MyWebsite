@@ -24,7 +24,7 @@ export default function Page() {
     },
     {
       title: "User Authentication",
-      description:"User authenitcation system containing registration and login features, along with JWT and email verification.",
+      description:"User authenitcation system containing registration and login features, along with JWT and email verification. Used Next.js for a seamless user experience and connected to a Spring Boot backend.",
       tech: ["Next.js", "Java", "Spring Boot", "Typescript", "PostgreSQL", "Postman"],
       url: "https://github.com/mcampo0215/UserAuthentication",
       icon: <Database className="w-6 h-6" />,
@@ -57,11 +57,11 @@ export default function Page() {
             </CardDescription>
             <div className="mt-6 text-center text-gray-400 text-sm animate-pulse-slow font-serif">
               <TypingAnimation className="font-mono text-sm #0d0d0d, #595959, #c0c0c0, #f5f5f5"
-              duration={65}>Hello! My name is Matthew and I am an aspiring software engineer
-              studying computer science at NYIT. I have gained my experience so
-              far building projects using React Native & Expo Go, in addition to
+              duration={65}>Hi! My name is Matthew and I am an aspiring software engineer
+              studying Computer Science at NYIT. I have gained my experience so
+              far building projects using React Native & Next.js, in addition to
               working with several backend services such as Spring Boot,
-              Firebase, and MySQL. I have different side projects as well that
+              Firebase, and PostgreSQL. I have different side projects as well that
               can be accessible below.</TypingAnimation>
             </div>
           </CardHeader>

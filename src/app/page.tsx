@@ -4,7 +4,7 @@ import {Card,CardDescription,CardFooter,CardHeader,CardTitle} from "@/components
 import { Github, Linkedin, ExternalLink, Code, Database, Smartphone, BarChart2Icon } from "lucide-react";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { SiReact, SiSpringboot, SiNextdotjs, SiJavascript, SiPython, SiTypescript, SiPostgresql, SiFirebase} from "react-icons/si";
-import { Icon } from "lucide-react";
+import { IconType } from "react-icons";
 
 type TechItem={name: string; Icon: React.ComponentType<{className?: string}>};
 const TECH: Record<string, TechItem[]>={

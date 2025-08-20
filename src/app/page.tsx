@@ -6,7 +6,7 @@ import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { SiReact, SiSpringboot, SiNextdotjs, SiJavascript, SiPython, SiTypescript, SiPostgresql, SiFirebase} from "react-icons/si";
 import { IconType } from "react-icons";
 
-type TechItem={name: string; Icon: React.ComponentType<{className?: string}>};
+type TechItem={name: string; Icon: IconType};
 const TECH: Record<string, TechItem[]>={
   "Frameworks": [
     {name: "React Native", Icon: SiReact},

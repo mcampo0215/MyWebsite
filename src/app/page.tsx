@@ -3,7 +3,51 @@ import * as React from "react";
 import {Card,CardDescription,CardFooter,CardHeader,CardTitle} from "@/components/ui/card";
 import { Github, Linkedin, ExternalLink, Code, Database, Smartphone, BarChart2Icon } from "lucide-react";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
+import { SiReact, SiSpringboot, SiNextdotjs, SiJavascript, SiPython, SiTypescript, SiPostgresql, SiFirebase} from "react-icons/si";
+import { Icon } from "lucide-react";
 
+type TechItem={name: string; Icon: React.ComponentType<{className?: string}>};
+const TECH: Record<string, TechItem[]>={
+  "Frameworks": [
+    {name: "React Native", Icon: SiReact},
+    {name: "Next.js", Icon: SiNextdotjs},
+  ],
+  "Languages": [
+    {name: "Java", Icon: SiJavascript},
+    {name: "Python", Icon: SiPython},
+    {name: "Typescript", Icon: SiTypescript},
+  ],
+  "Backend": [
+    {name: "Spring Boot", Icon: SiSpringboot},
+    {name: "PostgreSQL", Icon: SiPostgresql},
+    {name: "Firebase", Icon: SiFirebase},
+  ],
+}
+function TechGrid() {
+  return(
+    <div className="w-full max-w-7xl mx-auto">
+      <div className="grid gap-8">
+        {Object.entries(TECH).map(([group, items]) => (
+          <div key={group} className="text-center">
+            <h3 className="mb-4 text-lg font-semibold font text-white/90">{group}</h3>
+            <ul className="flex flex-wrap justify-center gap-4">
+              {items.map(({name, Icon}) => (
+                <li key={name}>
+                  <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-4 py-5 hover:bg-white/10 hover:border-white/20 transition"
+                  title={name}
+                  aria-label={name}>
+                    <Icon className="w-8 h-8 mb-2"></Icon>
+                    <span className="text-sm text-gray-200">{name}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
 export default function Page() {
   const projects = [
     {
@@ -155,6 +199,14 @@ export default function Page() {
             </div>
           ))}
         </div>
+        {/* Code for Tech Stacks */}
+        <hr className="w-full max-w-5xl my-8 border-t border-white/20"/>
+        <section className="w-full max-w-7xl mx-auto px-4 mt-16 text-white text-center"></section>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4 font-serif bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">Tech Stack</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">All my curent technologies used.</p>
+        </div>
+        <TechGrid></TechGrid>
         <div className="mt-16 text-center">
           <p className="text-gray-400 mb-6">
             Explore more of my work here!

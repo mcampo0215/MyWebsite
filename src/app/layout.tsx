@@ -13,6 +13,7 @@ export default function RootLayout({
     return (
         <html lang = "en" className="bg-black [color-scheme:dark]">
             <body className = "bg-gradient-to-br from-gray-900 to-black text-white overscroll-none overflow-x-hidden">
+                <div className="fixed inset-0 -z-10 bg-gradient-to-br from-[#0b1b3b] via-[#0a1732] to-[#091128]"></div>
                 {children}
             </body>
 

@@ -31,12 +31,12 @@ function TechGrid() {
           <div key={group} className="text-center">
             <h3 className="mb-4 text-lg font-semibold font text-white/90">{group}</h3>
             <ul className="flex flex-wrap justify-center gap-4">
-              {items.map(({name, Icon}) => (
+              {items.map(({name, Icon: TechIcon}) => (
                 <li key={name}>
                   <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-4 py-5 hover:bg-white/10 hover:border-white/20 transition"
                   title={name}
                   aria-label={name}>
-                    <Icon className="w-8 h-8 mb-2"></Icon>
+                    <TechIcon className="w-8 h-8 mb-2"></TechIcon>
                     <span className="text-sm text-gray-200">{name}</span>
                   </div>
                 </li>

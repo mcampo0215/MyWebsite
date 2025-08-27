@@ -5,6 +5,8 @@ import { Github, Linkedin, ExternalLink, Code, Database, Smartphone, BarChart2Ic
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { SiReact, SiSpringboot, SiNextdotjs, SiJavascript, SiPython, SiTypescript, SiPostgresql, SiFirebase} from "react-icons/si";
 import { IconType } from "react-icons";
+import { SiCoffeescript } from "react-icons/si";
+import { DiJava } from "react-icons/di";
 
 type TechItem={name: string; Icon: IconType};
 const TECH: Record<string, TechItem[]>={
@@ -13,9 +15,10 @@ const TECH: Record<string, TechItem[]>={
     {name: "Next.js", Icon: SiNextdotjs},
   ],
   "Languages": [
-    {name: "Java", Icon: SiJavascript},
+    {name: "Javascript", Icon: SiJavascript},
     {name: "Python", Icon: SiPython},
     {name: "Typescript", Icon: SiTypescript},
+    {name: "Java", Icon: DiJava},
   ],
   "Backend": [
     {name: "Spring Boot", Icon: SiSpringboot},
@@ -85,7 +88,8 @@ export default function Page() {
   ];
 
   return (
-    <div className="relative flex flex-col items-center min-h-screen bg-gradient-to-br from-gray-900/95 to-black/95 p-6 overflow-hidden">
+    <div className="relative flex flex-col items-center min-h-screen 
+  bg-gradient-to-br from-slate-950 to-slate-900 p-6 overflow-hidden">
       <div className="relative z-10 w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
         <Card className="flex flex-col bg-gradient-to-r from-white via-violet-200 via-cyan-200 to-emerald-200 bg-clip-text text-transparent animate-text-shimmer bg-[length:300%_300%] ">
           <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/10 to-transparent opacity-70 pointer-events-none" />
@@ -151,7 +155,7 @@ export default function Page() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10"
+              className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/40"
               style={{
                 animationDelay: `${index * 150}ms`,
                 animation: 'fadeInUp 0.6s ease-out forwards'
@@ -200,11 +204,13 @@ export default function Page() {
           ))}
         </div>
         {/* Code for Tech Stacks */}
+        <div className="bg-gradient-to-r from-white via-violet-200 via-cyan-200 to-emerald-200 bg-clip-text text-transparent animate-text-shimmer bg-[length:300%_300%]">
         <hr className="w-full max-w-5xl my-8 border-t border-white/20"/>
         <section className="w-full max-w-7xl mx-auto px-4 mt-16 text-white text-center"></section>
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 font-serif bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">Tech Stack</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">All my curent technologies used.</p>
+        </div>
         </div>
         <TechGrid></TechGrid>
         <div className="mt-16 text-center">

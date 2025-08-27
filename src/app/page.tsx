@@ -5,7 +5,6 @@ import { Github, Linkedin, ExternalLink, Code, Database, Smartphone, BarChart2Ic
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { SiReact, SiSpringboot, SiNextdotjs, SiJavascript, SiPython, SiTypescript, SiPostgresql, SiFirebase} from "react-icons/si";
 import { IconType } from "react-icons";
-import { SiCoffeescript } from "react-icons/si";
 import { DiJava } from "react-icons/di";
 
 type TechItem={name: string; Icon: IconType};

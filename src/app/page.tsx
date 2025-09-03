@@ -1,7 +1,7 @@
 "use client"
 import * as React from "react";
 import {Card,CardDescription,CardFooter,CardHeader,CardTitle} from "@/components/ui/card";
-import { Github, Linkedin, ExternalLink, Code, Database, Smartphone, BarChart2Icon } from "lucide-react";
+import { Github, Linkedin, ExternalLink, Code, Database, Smartphone, BarChart2Icon, Music4Icon } from "lucide-react";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { SiReact, SiSpringboot, SiNextdotjs, SiJavascript, SiPython, SiTypescript, SiPostgresql, SiFirebase} from "react-icons/si";
 import { IconType } from "react-icons";
@@ -89,7 +89,7 @@ export default function Page() {
       description:"UI that allows users to connect their apple music account in order to recieve a custom made playlist based on listening history & song recommendations. Users can additionally refresh their playlist.",
       tech: ["Next.js", "Typescript", "Apple Music API", "MusicKit"],
       url: "https://github.com/mcampo0215/AshleyAI-Playlist",
-      icon: <Smartphone className="w-6 h-6" />,
+      icon: <Music4Icon className="w-6 h-6" />,
       gradient: "from-blue-500/20 to-purple-500/20",
       className: "relative flex flex-col items-center",
     },

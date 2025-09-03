@@ -83,7 +83,16 @@ export default function Page() {
       url: "https://github.com/mcampo0215/Penalty-Kick-Analyzer",
       icon: <Smartphone className="w-6 h-6" />,
       gradient: "from-blue-500/20 to-purple-500/20"
-    }
+    },
+     {
+      title: "Weekly Playlist",
+      description:"UI that allows users to connect their apple music account in order to recieve a custom made playlist based on listening history & song recommendations. Users can additionally refresh their playlist.",
+      tech: ["Next.js", "Typescript", "Apple Music API", "MusicKit"],
+      url: "https://github.com/mcampo0215/AshleyAI-Playlist",
+      icon: <Smartphone className="w-6 h-6" />,
+      gradient: "from-blue-500/20 to-purple-500/20",
+      className: "relative flex flex-col items-center",
+    },
   ];
 
   return (

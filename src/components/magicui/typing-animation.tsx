@@ -1,59 +1,31 @@
 "use client";
+import React, { useEffect, useState } from "react";
 
-import { cn } from "@/lib/utils";
-import { motion, MotionProps, useInView } from "motion/react";
-import { useEffect, useRef, useState } from "react";
-
-interface TypingAnimationProps extends MotionProps {
+interface TypingAnimationProps {
   children: string;
   className?: string;
   duration?: number;
   delay?: number;
   as?: React.ElementType;
-  startOnView?: boolean;
 }
 
 export function TypingAnimation({
   children,
-  className,
+  className = "",
   duration = 100,
   delay = 0,
   as: Component = "div",
-  startOnView = false,
-  ...props
 }: TypingAnimationProps) {
-  const MotionComponent = motion.create(Component, {
-    forwardMotionProps: true,
-  });
-
-  const [displayedText, setDisplayedText] = useState<string>("");
+  const [displayedText, setDisplayedText] = useState("");
   const [started, setStarted] = useState(false);
-  const elementRef = useRef<HTMLElement | null>(null);
-  const isInView = useInView(elementRef as React.RefObject<Element>, {
-    amount: 0.3,
-    once: true,
-  });
 
   useEffect(() => {
-    if (!startOnView) {
-      const startTimeout = setTimeout(() => {
-        setStarted(true);
-      }, delay);
-      return () => clearTimeout(startTimeout);
-    }
-
-    if (!isInView) return;
-
-    const startTimeout = setTimeout(() => {
-      setStarted(true);
-    }, delay);
-
+    const startTimeout = setTimeout(() => setStarted(true), delay);
     return () => clearTimeout(startTimeout);
-  }, [delay, startOnView, isInView]);
+  }, [delay]);
 
   useEffect(() => {
     if (!started) return;
-
     const graphemes = Array.from(children);
     let i = 0;
     const typingEffect = setInterval(() => {
@@ -61,25 +33,16 @@ export function TypingAnimation({
         setDisplayedText(graphemes.slice(0, i + 1).join(""));
         i++;
       } else {
-        clearInterval(typingEffect);
+      // removed stray clearInterval(typingEffect);
       }
     }, duration);
-
-    return () => {
-      clearInterval(typingEffect);
-    };
+    return () => clearInterval(typingEffect);
   }, [children, duration, started]);
 
   return (
-    <MotionComponent
-      ref={elementRef}
-      className={cn(
-        "text-4xl font-bold leading-[5rem] tracking-[-0.02em]",
-        className,
-      )}
-      {...props}
-    >
+    <Component className={`font-bold text-2xl md:text-4xl font-mono pixel-border bg-black/70 p-4 text-white ${className}`.trim()}>
       {displayedText}
-    </MotionComponent>
+    </Component>
   );
 }
+

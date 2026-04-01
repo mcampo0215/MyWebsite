@@ -9,7 +9,9 @@ import type { Project } from "@/components/portfolio/types";
 
 export default function Page() {
   const [showContent, setShowContent] = useState(false);
-  const [isFlipping, setIsFlipping] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [showIntroFace, setShowIntroFace] = useState(true);
+  const [showPortfolioFace, setShowPortfolioFace] = useState(false);
   const [activeTab, setActiveTab] = useState<
     "achievements" | "player build" | "arenas"
   >(
@@ -20,19 +22,23 @@ export default function Page() {
   const currentLevel = projects.length;
 
   const handleStart = () => {
-    setIsFlipping(true);
-    setTimeout(() => {
-      setShowContent(true);
-      setIsFlipping(false);
-    }, 800);
+    if (isTransitioning || showContent) {
+      return;
+    }
+
+    setShowPortfolioFace(true);
+    setIsTransitioning(true);
+    setShowContent(true);
   };
 
   const handleBack = () => {
-    setIsFlipping(true);
-    setTimeout(() => {
-      setShowContent(false);
-      setIsFlipping(false);
-    }, 800);
+    if (isTransitioning || !showContent) {
+      return;
+    }
+
+    setShowIntroFace(true);
+    setIsTransitioning(true);
+    setShowContent(false);
   };
 
   return (
@@ -52,6 +58,7 @@ export default function Page() {
 
           .flip-card {
             perspective: 2000px;
+            transform-style: preserve-3d;
           }
 
           .flip-card-inner {
@@ -60,6 +67,7 @@ export default function Page() {
             height: 100%;
             transition: transform 0.8s cubic-bezier(.4,2,.6,1);
             transform-style: preserve-3d;
+            will-change: transform;
           }
 
           .flip-card.flipped .flip-card-inner {
@@ -74,14 +82,22 @@ export default function Page() {
             top: 0;
             left: 0;
             backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            will-change: transform;
+          }
+
+          .flip-card-front {
+            transform: rotateY(0deg) translateZ(1px);
           }
 
           .flip-card-back {
-            transform: rotateY(180deg);
+            transform: rotateY(180deg) translateZ(1px);
           }
 
           @keyframes softGlimmerDiagonal {
@@ -103,7 +119,7 @@ export default function Page() {
         `}</style>
 
         <div
-          className={`flip-card${isFlipping || showContent ? " flipped" : ""}`}
+          className={`flip-card${showContent ? " flipped" : ""}`}
           style={{
             width: "99vw",
             maxWidth: 1200,
@@ -112,15 +128,27 @@ export default function Page() {
             maxHeight: "92vh",
           }}
         >
-          <div className="flip-card-inner" style={{ width: "100%", height: "100%" }}>
+          <div
+            className="flip-card-inner"
+            style={{ width: "100%", height: "100%" }}
+            onTransitionEnd={() => {
+              setIsTransitioning(false);
+
+              if (showContent) {
+                setShowIntroFace(false);
+              } else {
+                setShowPortfolioFace(false);
+              }
+            }}
+          >
             <div className="flip-card-front">
-              {!isFlipping && !showContent && (
+              {showIntroFace && (
                 <IntroPanel aboutMe={aboutMe} onStart={handleStart} />
               )}
             </div>
 
             <div className="flip-card-back">
-              {(showContent || isFlipping) && (
+              {showPortfolioFace && (
                 <PortfolioView
                   activeTab={activeTab}
                   courses={courses}

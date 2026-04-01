@@ -187,12 +187,10 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 style={{
                   color: "#d9ebff",
                   lineHeight: 1.7,
-                  marginBottom: "1rem",
                 }}
               >
                 {project.description}
               </p>
-              <p style={{ color: "#a8d4ff", lineHeight: 1.7 }}>{project.impact}</p>
             </div>
 
             <div

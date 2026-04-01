@@ -4,7 +4,6 @@ export type Project = {
   tech: string[];
   url: string;
   summary: string;
-  impact: string;
   features: string[];
   metrics: {
     completion: number;

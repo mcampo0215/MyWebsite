@@ -19,7 +19,7 @@ type CoursesSectionProps = {
 
 const iconMap = {
   "Data Structures": Blocks,
-  Algorithms: Spline,
+  "Design & Analysis of Algorithms": Spline,
   "Operating Systems": SquareCode,
   "Database Systems": Database,
   "Software Engineering": Wrench,
@@ -51,7 +51,8 @@ export function CoursesSection({ courses }: CoursesSectionProps) {
         {courses.map((course) => (
           <div key={course.name} className="flex">
             {(() => {
-              const Icon = iconMap[course.name as keyof typeof iconMap];
+              const Icon =
+                iconMap[course.name as keyof typeof iconMap] ?? Blocks;
 
               return (
                 <div
@@ -151,8 +152,6 @@ export function CoursesSection({ courses }: CoursesSectionProps) {
                         marginBottom: "1rem",
                       }}
                     >
-                      Completed through NYIT coursework with a focus on
-                      practical engineering fundamentals.
                     </div>
 
                     <div className="mt-auto flex items-center justify-between gap-3">

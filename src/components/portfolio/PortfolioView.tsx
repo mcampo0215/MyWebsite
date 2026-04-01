@@ -45,18 +45,56 @@ export function PortfolioView({
     >
       <button
         onClick={onBack}
-        className="retro-btn mb-6 px-4 py-2 pixel-border"
+        className="mb-8 self-start"
         style={{
-          background: "linear-gradient(90deg, #3a5ccc 0%, #6ec6ff 100%)",
-          color: "#fff",
-          fontWeight: 700,
-          fontSize: "1rem",
-          borderRadius: 8,
-          border: "2px solid #fff",
-          boxShadow: "0 2px 8px #3a5ccc55",
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "0.7rem",
+          padding: "0.8rem 1.15rem",
+          borderRadius: 999,
+          border: "1px solid rgba(189, 229, 255, 0.36)",
+          background:
+            "linear-gradient(135deg, rgba(8, 22, 49, 0.92) 0%, rgba(25, 58, 108, 0.95) 55%, rgba(77, 167, 255, 0.3) 100%)",
+          boxShadow:
+            "0 10px 24px rgba(3, 10, 24, 0.28), inset 0 1px 0 rgba(255,255,255,0.14)",
+          color: "#f5fbff",
+          fontWeight: 800,
+          fontSize: "0.94rem",
+          letterSpacing: 0.4,
+          transition: "transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease",
+          cursor: "pointer",
+        }}
+        onMouseEnter={(event) => {
+          event.currentTarget.style.transform = "translateY(-1px)";
+          event.currentTarget.style.boxShadow =
+            "0 14px 28px rgba(3, 10, 24, 0.34), inset 0 1px 0 rgba(255,255,255,0.18)";
+          event.currentTarget.style.borderColor = "rgba(222, 242, 255, 0.64)";
+        }}
+        onMouseLeave={(event) => {
+          event.currentTarget.style.transform = "translateY(0)";
+          event.currentTarget.style.boxShadow =
+            "0 10px 24px rgba(3, 10, 24, 0.28), inset 0 1px 0 rgba(255,255,255,0.14)";
+          event.currentTarget.style.borderColor = "rgba(189, 229, 255, 0.36)";
         }}
       >
-        ← Back to Intro
+        <span
+          aria-hidden="true"
+          style={{
+            width: 30,
+            height: 30,
+            borderRadius: "50%",
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "rgba(255,255,255,0.1)",
+            border: "1px solid rgba(255,255,255,0.16)",
+            fontSize: "0.95rem",
+            flexShrink: 0,
+          }}
+        >
+          ←
+        </span>
+        Return to Intro
       </button>
 
       <div className="flex gap-6 mb-8 mt-2">

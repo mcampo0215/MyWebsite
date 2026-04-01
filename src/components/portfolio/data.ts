@@ -5,7 +5,7 @@ export const aboutMe =
 
 export const courses: Course[] = [
   { name: "Data Structures" },
-  { name: "Algorithms" },
+  { name: "Design & Analysis of Algorithms" },
   { name: "Operating Systems" },
   { name: "Database Systems" },
   { name: "Software Engineering" },
@@ -23,8 +23,6 @@ export const projects: Project[] = [
       "An algorithm visualization tool built to compare brute force and optimized approaches in a way that feels interactive and intuitive for students.",
     summary:
       "A learning-focused project that turns abstract algorithm behavior into visuals people can actually follow step by step.",
-    impact:
-      "This is the kind of project that shows both technical skill and teaching instinct, because it translates complexity into something clear and useful.",
     tech: ["Java", "p5.js"],
     url: "https://github.com/mcampo0215/AlgoVisualization",
     features: [
@@ -46,9 +44,7 @@ export const projects: Project[] = [
       "A simulation of PageRank using Markov chains, with a UI layer and graph-driven feedback to make the math easier to understand.",
     summary:
       "A theory-heavy concept turned into an approachable, visual software experience with both logic and presentation working together.",
-    impact:
-      "This gives you a strong academic-meets-practical project because it demonstrates mathematical modeling, data flow, and interface design in one build.",
-    tech: ["React Native", "Javascript", "Spring Boot", "Java"],
+    tech: ["React Native", "Spring Boot"],
     url: "https://github.com/mcampo0215/MarkovChains",
     features: [
       "Mathematical concept translated into an interactive system",
@@ -69,11 +65,8 @@ export const projects: Project[] = [
       "A full authentication system with registration, login, JWT handling, and email verification, pairing a Next.js frontend with a Spring Boot backend.",
     summary:
       "A clean full-stack security-focused build that covers core real-world app behavior from identity to session flow.",
-    impact:
-      "This is especially valuable because recruiters immediately understand the business relevance of auth, and it signals practical engineering experience.",
     tech: [
       "Next.js",
-      "Java",
       "Spring Boot",
       "Typescript",
       "PostgreSQL",
@@ -99,8 +92,6 @@ export const projects: Project[] = [
       "An app where users upload penalty kick video footage and receive AI-informed guidance to improve shot accuracy, combined with account-based access.",
     summary:
       "A more ambitious full-stack concept with video processing, AI potential, and a clear sports-tech angle.",
-    impact:
-      "This stands out because it feels original and product-oriented, which makes it memorable compared with more common portfolio projects.",
     tech: [
       "Next.js",
       "Typescript",
@@ -130,9 +121,7 @@ export const projects: Project[] = [
       "A music recommendation app that connects to Apple Music and generates refreshed playlists based on listening history.",
     summary:
       "A polished API-driven project with a consumer-friendly concept and a nice mix of personalization and UI potential.",
-    impact:
-      "This helps round out the portfolio with a lighter but highly relatable product, showing you can build features people instantly understand.",
-    tech: ["Next.js", "Typescript", "Apple Music API", "MusicKit"],
+    tech: ["Next.js", "Typescript", "Node.js"],
     url: "https://github.com/mcampo0215/AshleyAI-Playlist",
     features: [
       "Apple Music integration",

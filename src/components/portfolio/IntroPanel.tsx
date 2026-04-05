@@ -84,7 +84,7 @@ export function IntroPanel({ aboutMe, onStart }: IntroPanelProps) {
         {aboutMe}
       </div>
 
-      <p style={{ color: "#bfc9d1", zIndex: 2 }}>matthewcampoverde@gmail.com</p>
+      <p style={{ color: "#bfc9d1", zIndex: 2 }}>mcampo1502@gmail.com</p>
 
       <div className="flex flex-row gap-4 mb-2 z-10">
         <a

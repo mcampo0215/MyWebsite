@@ -1,7 +1,7 @@
 import { Download, ExternalLink, FileText } from "lucide-react";
 import { SectionBanner } from "./SectionBanner";
 
-const RESUME_PATH = "/resume.pdf";
+const RESUME_PATH = "/resume_new.pdf";
 
 export function PlayerBuildSection() {
   return (

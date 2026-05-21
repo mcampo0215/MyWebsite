@@ -102,7 +102,7 @@ export function IntroPanel({ aboutMe, onStart }: IntroPanelProps) {
         </a>
 
         <a
-          href="https://linkedin.com/in/matthewcampoverde"
+          href="https://www.linkedin.com/in/matthew-campoverde-aa4bb4256/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2"

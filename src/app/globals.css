@@ -1,20 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import 'tailwindcss';
-@import "tw-animate-css";
-
-@font-face {
-  font-family: 'PressStart2P';
-  src: url('https://fonts.cdnfonts.com/s/19807/PressStart2P-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 
 /* Retro font utility for headings and special elements */
 .retro-font, h1, .press-start-blink {
   font-family: 'Press Start 2P', 'VT323', 'Pixel', Menlo, Monaco, monospace;
 }
 html, body {
-  font-family: 'PressStart2P', monospace, system-ui;
+  font-family: 'Press Start 2P', monospace, system-ui;
   min-height: 100vh;
   color: #e3f0fc;
   letter-spacing: 1px;
@@ -28,7 +20,10 @@ body::after {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 0;
-  background: url('https://www.transparenttextures.com/patterns/pw-maze-white.png');
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
   opacity: 0.12;
   mix-blend-mode: screen;
 }

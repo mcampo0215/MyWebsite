@@ -1,5 +1,6 @@
 import { Download, ExternalLink, FileText } from "lucide-react";
 import { SectionBanner } from "./SectionBanner";
+import { SignaturePlayer } from "./SignaturePlayer";
 
 const RESUME_PATH = "/resume_new.pdf";
 
@@ -7,6 +8,7 @@ export function PlayerBuildSection() {
   return (
     <section className="w-full max-w-5xl mx-auto">
       <SectionBanner title="Player Build" />
+      <SignaturePlayer />
 
       <div
         className="grid grid-cols-1 xl:grid-cols-[280px_minmax(0,1fr)] gap-6 items-start"

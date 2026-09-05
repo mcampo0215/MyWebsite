@@ -1,34 +1,10 @@
-import {
-  Binary,
-  Blocks,
-  BrainCircuit,
-  Database,
-  Globe,
-  Network,
-  Smartphone,
-  Spline,
-  SquareCode,
-  Wrench,
-} from "lucide-react";
+import { ArenaIcon } from "./ArenaIcon";
 import { SectionBanner } from "./SectionBanner";
 import type { Course } from "./types";
 
 type CoursesSectionProps = {
   courses: Course[];
 };
-
-const iconMap = {
-  "Data Structures": Blocks,
-  "Design & Analysis of Algorithms": Spline,
-  "Operating Systems": SquareCode,
-  "Database Systems": Database,
-  "Software Engineering": Wrench,
-  "Computer Networks": Network,
-  "Web Development": Globe,
-  "Artificial Intelligence": BrainCircuit,
-  "Discrete Mathematics": Binary,
-  "Mobile App Development": Smartphone,
-} as const;
 
 export function CoursesSection({ courses }: CoursesSectionProps) {
   return (
@@ -48,13 +24,8 @@ export function CoursesSection({ courses }: CoursesSectionProps) {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 justify-center px-2">
-        {courses.map((course) => (
+        {courses.map((course, index) => (
           <div key={course.name} className="flex">
-            {(() => {
-              const Icon =
-                iconMap[course.name as keyof typeof iconMap] ?? Blocks;
-
-              return (
                 <div
                   className="w-full"
                   style={{
@@ -107,28 +78,7 @@ export function CoursesSection({ courses }: CoursesSectionProps) {
                         Arena Clear
                       </span>
 
-                      <div
-                        style={{
-                          width: 52,
-                          height: 52,
-                          borderRadius: 14,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          background:
-                            "linear-gradient(135deg, rgba(103, 184, 255, 0.22), rgba(255, 224, 102, 0.14))",
-                          border: "1px solid rgba(173, 223, 255, 0.28)",
-                          boxShadow:
-                            "0 0 18px rgba(103, 184, 255, 0.16), inset 0 0 12px rgba(255,255,255,0.04)",
-                          flexShrink: 0,
-                        }}
-                      >
-                        <Icon
-                          size={25}
-                          strokeWidth={2.1}
-                          color="#d9f3ff"
-                        />
-                      </div>
+                      <ArenaIcon course={course.name} index={index} />
                     </div>
 
                     <div
@@ -181,8 +131,6 @@ export function CoursesSection({ courses }: CoursesSectionProps) {
                     </div>
                   </div>
                 </div>
-              );
-            })()}
           </div>
         ))}
       </div>

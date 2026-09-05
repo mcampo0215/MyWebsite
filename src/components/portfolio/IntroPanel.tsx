@@ -116,7 +116,8 @@ export function IntroPanel({ aboutMe, onStart }: IntroPanelProps) {
         </a>
       </div>
 
-      <a
+      <button
+        type="button"
         className="text-lg md:text-xl mt-2 mb-2 cursor-pointer press-start-blink"
         style={{
           color: "#bfc9d1",
@@ -136,7 +137,7 @@ export function IntroPanel({ aboutMe, onStart }: IntroPanelProps) {
         onClick={onStart}
       >
         Click to Start
-      </a>
+      </button>
     </div>
   );
 }

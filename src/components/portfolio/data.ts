@@ -19,6 +19,7 @@ export const courses: Course[] = [
 export const projects: Project[] = [
   {
     title: "Algorithm Visualization",
+    badge: { kind: "algorithm", name: "Algorithm Adept" },
     description:
       "An algorithm visualization tool built to compare brute force and optimized approaches in a way that feels interactive and intuitive for students.",
     summary:
@@ -40,6 +41,7 @@ export const projects: Project[] = [
   },
   {
     title: "Page Rank & Markov",
+    badge: { kind: "graph", name: "Graph Navigator" },
     description:
       "A simulation of PageRank using Markov chains, with a UI layer and graph-driven feedback to make the math easier to understand.",
     summary:
@@ -61,6 +63,7 @@ export const projects: Project[] = [
   },
   {
     title: "User Authentication",
+    badge: { kind: "security", name: "Security Sentinel" },
     description:
       "A full authentication system with registration, login, JWT handling, and email verification, pairing a Next.js frontend with a Spring Boot backend.",
     summary:
@@ -88,6 +91,7 @@ export const projects: Project[] = [
   },
   {
     title: "Penalty Kick Analyzer",
+    badge: { kind: "goal", name: "Goal Tactician" },
     description:
       "An app where users upload penalty kick video footage and receive AI-informed guidance to improve shot accuracy, combined with account-based access.",
     summary:
@@ -117,6 +121,7 @@ export const projects: Project[] = [
   },
   {
     title: "Weekly Playlist",
+    badge: { kind: "music", name: "Rhythm Crafter" },
     description:
       "A music recommendation app that connects to Apple Music and generates refreshed playlists based on listening history.",
     summary:

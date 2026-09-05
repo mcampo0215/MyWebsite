@@ -1,0 +1,236 @@
+.panel {
+  display: grid;
+  grid-template-columns: 256px minmax(0, 1fr);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 1px solid #8fd6ff59;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #112448, #1a3667);
+  box-shadow: 0 12px 24px #08122a33;
+}
+
+.scene {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 256px;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(#0c1933, #1a3a62);
+  border-right: 1px solid #8fd6ff33;
+}
+
+.playerTag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  color: #8fd6ff;
+  font: 0.65rem/1.5 monospace;
+  letter-spacing: 1px;
+}
+
+.greeting {
+  position: absolute;
+  right: 18px;
+  top: 36px;
+  width: 200px;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 2;
+  padding: 7px 9px;
+  border: 2px solid #a8dfff;
+  color: #eefaff;
+  background: #142c4e;
+  box-shadow: 3px 3px 0 #08162d;
+  font: 700 0.75rem/1.4 monospace;
+  letter-spacing: 0;
+}
+
+.greeting::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 12px;
+  width: 6px;
+  height: 6px;
+  background: #a8dfff;
+}
+
+.skyline {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  display: flex;
+  width: 200%;
+  height: 112px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.skyline svg {
+  width: 50%;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.characterButton {
+  position: relative;
+  z-index: 1;
+  width: 176px;
+  height: 198px;
+  margin-bottom: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.characterButton:focus-visible {
+  outline: 2px solid #7ff3cb;
+  outline-offset: 2px;
+}
+
+.character {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.leftLeg, .rightLeg {
+  transform-box: view-box;
+  transform-origin: 32px 51px;
+}
+
+.wavingArm {
+  transform-box: view-box;
+  transform-origin: 42px 36px;
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% + 16px);
+  height: 24px;
+  pointer-events: none;
+  border-top: 3px solid #7ff3cb;
+  background: repeating-linear-gradient(90deg, #152f47 0 14px, #1f4256 14px 16px);
+}
+
+.details {
+  align-self: center;
+  min-width: 0;
+  padding: 1.5rem;
+}
+
+.eyebrow {
+  color: #7ff3cb;
+  font: 0.75rem/1.6 monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.details h3 {
+  margin: 0.75rem 0;
+  color: #f7fbff;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.details p {
+  margin: 0;
+  max-width: 46ch;
+  color: #c9e7ff;
+  font: 0.95rem/1.8 monospace;
+  letter-spacing: 0;
+}
+
+.details .controls {
+  margin-top: 1rem;
+  color: #7ff3cb;
+  font-size: 0.8rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wavingArm {
+    animation: wave-hello 4s steps(3, end) infinite;
+  }
+
+  .skyline {
+    animation: city-scroll 12s linear infinite paused;
+  }
+
+  .ground {
+    animation: pavement-scroll 0.6s linear infinite paused;
+  }
+
+  .scene[data-walking="true"] .skyline,
+  .scene[data-walking="true"] .ground {
+    animation-play-state: running;
+  }
+
+  .scene[data-walking="true"] .leftLeg {
+    animation: step-left 0.7s steps(4, end) infinite;
+  }
+
+  .scene[data-walking="true"] .rightLeg {
+    animation: step-right 0.7s steps(4, end) infinite;
+  }
+
+  .scene[data-walking="true"] .body {
+    animation: walking-bob 0.35s steps(2, end) infinite;
+  }
+
+  .scene[data-walking="true"] .wavingArm {
+    animation: walking-arm 0.7s steps(4, end) infinite;
+  }
+}
+
+@keyframes city-scroll {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes pavement-scroll {
+  to { transform: translateX(-16px); }
+}
+
+@keyframes step-left {
+  0%, 100% { transform: translate(0, 0) rotate(-8deg); }
+  50% { transform: translate(1px, -3px) rotate(8deg); }
+}
+
+@keyframes step-right {
+  0%, 100% { transform: translate(-1px, -3px) rotate(-8deg); }
+  50% { transform: translate(0, 0) rotate(8deg); }
+}
+
+@keyframes walking-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1px); }
+}
+
+@keyframes walking-arm {
+  0%, 100% { transform: rotate(80deg); }
+  50% { transform: rotate(105deg); }
+}
+
+@keyframes wave-hello {
+  0%, 55%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(16deg); }
+  20%, 40% { transform: rotate(-12deg); }
+}
+
+@media (max-width: 640px) {
+  .panel { grid-template-columns: minmax(0, 1fr); }
+  .scene {
+    border-right: 0;
+    border-bottom: 1px solid #8fd6ff33;
+  }
+  .greeting { right: calc(50% - 106px); }
+  .details { padding: 1.25rem; }
+}

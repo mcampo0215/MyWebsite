@@ -1,4 +1,5 @@
 import { CurrentLevelDisplay } from "./CurrentLevelDisplay";
+import { AchievementBadge } from "./AchievementBadge";
 import { SectionBanner } from "./SectionBanner";
 import type { Project } from "./types";
 
@@ -52,6 +53,8 @@ export function ProjectsSection({
                 opacity: 0.55,
               }}
             />
+
+            <AchievementBadge badge={project.badge} index={idx} />
 
             <div
               style={{

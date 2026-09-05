@@ -1,0 +1,37 @@
+.frame {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  border: 2px solid var(--arena-color);
+  border-radius: 6px;
+  background: linear-gradient(145deg, #203d66, #0b1a35);
+  box-shadow: 3px 3px 0 #08162d, inset 0 0 0 3px #122644;
+}
+
+.frame svg {
+  overflow: visible;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .item {
+    animation: item-bob 3.6s steps(4, end) infinite;
+    animation-delay: var(--arena-delay);
+  }
+
+  .sparkle {
+    animation: sparkle 3s ease-in-out infinite;
+    animation-delay: var(--arena-delay);
+  }
+}
+
+@keyframes item-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}

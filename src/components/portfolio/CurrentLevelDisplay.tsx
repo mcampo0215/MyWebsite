@@ -1,3 +1,5 @@
+import { PlayerCharacter } from "./PlayerCharacter";
+
 type CurrentLevelDisplayProps = {
   level: number;
 };
@@ -37,7 +39,9 @@ export function CurrentLevelDisplay({ level }: CurrentLevelDisplayProps) {
           minHeight: 146,
         }}
       >
-        <div className="flex flex-col items-center md:items-start gap-2 text-center md:text-left md:flex-1">
+        <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 md:flex-1">
+          <PlayerCharacter />
+          <div className="flex flex-col gap-2 text-left">
           <span
             style={{
               color: "#8fd6ff",
@@ -61,6 +65,7 @@ export function CurrentLevelDisplay({ level }: CurrentLevelDisplayProps) {
           >
             LVL {level}
           </span>
+          </div>
         </div>
 
         <div className="w-full max-w-[340px] flex flex-col items-center md:items-end gap-2 md:flex-1">

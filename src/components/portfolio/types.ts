@@ -1,5 +1,9 @@
 export type Project = {
   title: string;
+  badge?: {
+    kind: "algorithm" | "graph" | "security" | "goal" | "music";
+    name: string;
+  };
   description: string;
   tech: string[];
   url: string;

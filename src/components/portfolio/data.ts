@@ -1,7 +1,7 @@
 import type { Course, Project } from "./types";
 
 export const aboutMe =
-  "Passionate software engineer in NYC. Currently a senior studying computer science at NYIT!";
+  "Passionate software engineer in NYC and recent NYIT grad. Currently pursuing my M.S. in Computer Science at CCNY!";
 
 export const courses: Course[] = [
   { name: "Data Structures" },

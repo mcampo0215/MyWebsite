@@ -2,7 +2,7 @@ import { Download, ExternalLink, FileText } from "lucide-react";
 import { SectionBanner } from "./SectionBanner";
 import { SignaturePlayer } from "./SignaturePlayer";
 
-const RESUME_PATH = "/swe_res_2026.pdf";
+const RESUME_PATH = "/swe_res_26.pdf";
 
 export function PlayerBuildSection() {
   return (

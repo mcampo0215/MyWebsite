@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { ExternalLink } from "lucide-react";
 import { ProgressBar } from "./ProgressBar";
@@ -12,11 +12,7 @@ type ProjectModalProps = {
 };
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
-  const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
-    setMounted(true);
-
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
@@ -30,8 +26,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
     };
   }, [onClose]);
 
-  if (!mounted) return null;
-
+  // The page mounts this modal only after a project is selected in the browser.
   return createPortal(
     <div
       onClick={onClose}
